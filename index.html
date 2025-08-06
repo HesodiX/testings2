@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список</title>
+</head>
+<body>
+    <h1>Список</h1>
+    <ul>
+        <% 
+            _query_str = "for $elem in collaborators return $elem/fullname"; 
+            TestArray = XQuery(_query_str);
+            for (var i = 0; i < TestArray.length; i++) {
+        %>
+            <li><%= TestArray[i] %></li>
+        <% } %>
+    </ul>
+</body>
+</html>
